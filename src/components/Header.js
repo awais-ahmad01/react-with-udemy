@@ -49,10 +49,21 @@ import React, {Component} from 'react';
 // }
 
 
+// we can use this outside and inside the class also but inside class we dont use const
+// const inputChange = () =>{
+//     console.log('I was Changed!!')
+// }
+
+
 // Class Component
 // class Header extends React.Component{
 // Another Method
 class Header extends Component{
+
+    inputChange = (event) =>{
+        // console.log('I was Changed!!')
+        console.log(event.target.value)
+    }
      
     render(){
         return(
@@ -63,8 +74,23 @@ class Header extends Component{
                 </div> */}
 
                 <header>
-                    <div className='logo'>Logo</div>
-                    <input/>
+                    <div 
+                        className='logo'
+                        onClick={() => console.log('I was Clicked')}
+                    >Logo</div>
+                    <input
+                        // This is used for outside function
+                        // onChange={inputChange}
+                        
+                        // This is use for inside
+                        // onChange={this.inputChange}
+
+
+                        // another way
+                        // onChange={this.inputChange()}  we cannot use it like this 
+                        // we will use it like below
+                        onChange={(event) => this.inputChange(event)}
+                    />
                 </header>
 
 
