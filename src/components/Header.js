@@ -1,7 +1,6 @@
 
 // import React from 'react';
 // Another Method
-
 import React, {Component} from 'react';
 
 
@@ -60,9 +59,32 @@ import React, {Component} from 'react';
 // Another Method
 class Header extends Component{
 
+
+
+    // State
+    state ={
+        title:'The Keywords are:',
+        keywords:'',
+        count: 0
+    }
+
     inputChange = (event) =>{
         // console.log('I was Changed!!')
-        console.log(event.target.value)
+        // console.log(event.target.value)
+        this.setState({
+            keywords: event.target.value
+
+        })
+    }
+
+    addOne(){
+        // this.setState({
+        //     count: this.state.count + 1
+        // })
+        // Another way which results same as above
+        this.setState((state, props)=>({
+            count: state.count + 1
+        }))
     }
      
     render(){
@@ -91,6 +113,12 @@ class Header extends Component{
                         // we will use it like below
                         onChange={(event) => this.inputChange(event)}
                     />
+
+                    <div>{this.state.title}</div>
+                    <div>{this.state.keywords}</div>
+
+                    <div>{this.state.count}</div>
+                    <button onClick={()=>this.addOne()}>Add One</button>
                 </header>
 
 
