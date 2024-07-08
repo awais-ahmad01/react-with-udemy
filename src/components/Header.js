@@ -60,13 +60,13 @@ import React, {Component} from 'react';
 class Header extends Component{
 
 
-
     // State
-    state ={
-        title:'The Keywords are:',
-        keywords:'',
-        count: 0
-    }
+
+    // state ={
+    //     title:'The Keywords are:',
+    //     keywords:'',
+    //     count: 0
+    // }
 
     inputChange = (event) =>{
         // console.log('I was Changed!!')
@@ -77,15 +77,15 @@ class Header extends Component{
         })
     }
 
-    addOne(){
+    // addOne(){
         // this.setState({
         //     count: this.state.count + 1
         // })
         // Another way which results same as above
-        this.setState((state, props)=>({
-            count: state.count + 1
-        }))
-    }
+        // this.setState((state, props)=>({
+        //     count: state.count + 1
+        // }))
+    // }
      
     render(){
         return(
@@ -97,8 +97,8 @@ class Header extends Component{
 
                 <header>
                     <div 
-                        className='logo'
-                        onClick={() => console.log('I was Clicked')}
+                        // className='logo'
+                        // onClick={() => console.log('I was Clicked')}
                     >Logo</div>
                     <input
                         // This is used for outside function
@@ -114,11 +114,11 @@ class Header extends Component{
                         onChange={(event) => this.inputChange(event)}
                     />
 
-                    <div>{this.state.title}</div>
+                    {/* <div>{this.state.title}</div>
                     <div>{this.state.keywords}</div>
 
                     <div>{this.state.count}</div>
-                    <button onClick={()=>this.addOne()}>Add One</button>
+                    <button onClick={()=>this.addOne()}>Add One</button> */}
                 </header>
 
 
