@@ -15,6 +15,7 @@ const NewsList = (props) => {
     const news = props.news.map((item) => {
         return(
             <NewsListItem
+                key = {item.id}
                 item = {item}
             />
         )
@@ -38,6 +39,9 @@ const NewsList = (props) => {
             })}
          */}
         {news}
+            
+        {/* React Children */}
+        {props.children}
         
         
         </>
